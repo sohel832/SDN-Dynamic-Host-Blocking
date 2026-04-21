@@ -1,97 +1,85 @@
 🚀 SDN Dynamic Host Blocking System
 📌 Overview
 
-The SDN Dynamic Host Blocking System is a security-focused project built using Software Defined Networking (SDN) principles. It dynamically detects suspicious hosts and blocks them in real-time using programmable network control.
+The SDN Dynamic Host Blocking System is a security-focused project built using Software Defined Networking (SDN). It dynamically detects suspicious hosts and blocks them in real time using programmable network control.
 
-Unlike traditional networks, SDN separates the control plane and data plane, enabling centralized and flexible network management. This project leverages that capability to implement automated intrusion prevention.
+Unlike traditional networks, SDN separates the control plane and data plane, enabling centralized and flexible network management.
 
-🎯Objectives
-Detect malicious or suspicious hosts in the network 
+🎯 Objectives
+Detect malicious or suspicious hosts
 Dynamically block attackers using SDN controller logic
-Improve network security using real-time monitoring
-Demonstrate SDN-based intrusion prevention system
-
-🧠 Key Concepts Used
+Improve network security with real-time monitoring
+Demonstrate SDN-based intrusion prevention
+🧠 Key Concepts
 Software Defined Networking (SDN)
 OpenFlow Protocol
-Centralized Controller (POX / Ryu)
-Flow Rules Installation
+Centralized Controller (POX)
+Flow Rule Installation
 Dynamic Host Blocking
-
 🏗️ System Architecture
-+----------------------+
-|   SDN Controller     |
-| (POX / RYU)          |
-+----------+-----------+
-           |
-           | OpenFlow
-           |
-+----------v-----------+
-|   Open vSwitch       |
-+----------+-----------+
-
-           |
-   ---------------------
-   |        |         |
-Host A   Host B   Attacker
+        +----------------------+
+        |   SDN Controller     |
+        |     (POX)            |
+        +----------+-----------+
+                   |
+                OpenFlow
+                   |
+        +----------v-----------+
+        |    Open vSwitch      |
+        +----------+-----------+
+                   |
+        ------------------------
+        |        |            |
+      Host A   Host B     Attacker
 ⚙️ Technologies Used
 Python 🐍
 POX Controller
-Mininet (Network Emulator)
+Mininet
 Open vSwitch
 Ubuntu Linux
 📂 Project Structure
 SDN-Dynamic-Host-Blocking/
-│── pox/
-│── mininet/
-│── scripts/
+│── dynamic_blocking.py
+│── topology.py
 │── README.md
-│── requirements.txt
-🚀 Installation & Setup
+🚀 Setup & Installation
 1️⃣ Clone Repository
 git clone https://github.com/sohel832/SDN-Dynamic-Host-Blocking.git
 cd SDN-Dynamic-Host-Blocking
 2️⃣ Install Dependencies
 sudo apt update
 sudo apt install mininet openvswitch-switch python3
-3️⃣ Run POX Controller
+▶️ Execution Steps
+Step 1: Run POX Controller
 cd pox
 python3 pox.py log.level --DEBUG forwarding.l2_learning
-4️⃣ Start Mininet
-sudo mn --topo single,3 --controller remote
+Step 2: Run Mininet Topology
+sudo python3 topology.py
 🔍 Working Mechanism
 Network traffic flows through Open vSwitch
 Controller monitors packets using OpenFlow
-Suspicious behavior is detected
-Controller installs flow rules to block attacker
-Malicious host is isolated from network
-
-👉 This approach is similar to SDN-based intrusion prevention systems where controllers dynamically enforce security policies
-
+Suspicious activity is detected
+Controller installs flow rules
+Attacker is blocked from communication
 📊 Features
 
 ✔ Real-time host blocking
 ✔ Centralized network control
 ✔ Scalable architecture
 ✔ Easy to extend for IDS/IPS
-✔ Works in simulated environment (Mininet)
+✔ Works in Mininet simulation
 
 🧪 Testing
-Ping between hosts
-Simulate malicious traffic
-Verify blocking using flow rules
-
-Example:
-
+Test Connectivity
 h1 ping h2
-📸 Sample Output
+Expected Output
 INFO: Blocking host 10.0.0.3
 Flow rule installed successfully
 🚧 Future Enhancements
-Integrate Machine Learning for attack detection
-Add GUI Dashboard
-Support multiple controllers
-Extend to DDoS detection
+Machine Learning-based attack detection
+GUI dashboard
+Multi-controller support
+DDoS detection
 👨‍💻 Author
 
 Sohel Chapparband
