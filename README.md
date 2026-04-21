@@ -5,17 +5,19 @@ The SDN Dynamic Host Blocking System is a security-focused project built using S
 
 Unlike traditional networks, SDN separates the control plane and data plane, enabling centralized and flexible network management. This project leverages that capability to implement automated intrusion prevention.
 
-🎯 Objectives
-Detect malicious or suspicious hosts in the network
+🎯Objectives
+Detect malicious or suspicious hosts in the network 
 Dynamically block attackers using SDN controller logic
 Improve network security using real-time monitoring
 Demonstrate SDN-based intrusion prevention system
+
 🧠 Key Concepts Used
 Software Defined Networking (SDN)
 OpenFlow Protocol
 Centralized Controller (POX / Ryu)
 Flow Rules Installation
 Dynamic Host Blocking
+
 🏗️ System Architecture
 +----------------------+
 |   SDN Controller     |
@@ -27,6 +29,7 @@ Dynamic Host Blocking
 +----------v-----------+
 |   Open vSwitch       |
 +----------+-----------+
+
            |
    ---------------------
    |        |         |
@@ -96,7 +99,3 @@ Sohel Chapparband
 📜 License
 
 This project is for academic and educational purposes.
-
-⭐ Contribution
-
-Feel free to fork this repo and contribute!
